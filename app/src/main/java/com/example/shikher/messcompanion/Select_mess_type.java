@@ -21,33 +21,24 @@ import butterknife.OnClick;
 public class Select_mess_type extends AppCompatActivity {
 
 
-//    @BindView(R.id.spinner_block)
-//    Spinner block;
+
     @BindView(R.id.spinner_mess_type)
     Spinner mess;
-//    @BindView(R.id.spinner_meal)
-//    Spinner meal;
+
     @BindView(R.id.imageButton_mess_type)
 ImageButton button;
-//    @BindView(R.id.button_submit_eat)
-//    Button submit;
-//    private int mYear, mMonth, mDay;
-//    private int mYear2, mMonth2, mDay2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_mess_type);
         ButterKnife.bind(this);
-//        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Blocks));
-//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        block.setAdapter(adapter1);
+
         ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Type));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mess.setAdapter(adapter2);
-//        ArrayAdapter<String> adapter3= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Meal_Type));
-//        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        meal.setAdapter(adapter3);
+
     }
 //    @OnClick(R.id.button_register)
 //    public void onRegisterSubmit(View v) {
