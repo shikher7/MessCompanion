@@ -18,16 +18,16 @@ import butterknife.OnClick;
  * Created by shikher on 4/7/17.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class Select_mess_type extends AppCompatActivity {
 
 
-    @BindView(R.id.spinner_block)
-    Spinner block;
-//    @BindView(R.id.spinner_mess_type)
-//    Spinner mess;
+//    @BindView(R.id.spinner_block)
+//    Spinner block;
+    @BindView(R.id.spinner_mess_type)
+    Spinner mess;
 //    @BindView(R.id.spinner_meal)
 //    Spinner meal;
-    @BindView(R.id.imageButton_block)
+    @BindView(R.id.imageButton_mess_type)
 ImageButton button;
 //    @BindView(R.id.button_submit_eat)
 //    Button submit;
@@ -37,14 +37,14 @@ ImageButton button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_block);
+        setContentView(R.layout.activity_select_mess_type);
         ButterKnife.bind(this);
-        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Blocks));
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        block.setAdapter(adapter1);
-//        ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Type));
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        mess.setAdapter(adapter2);
+//        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Blocks));
+//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        block.setAdapter(adapter1);
+        ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Type));
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mess.setAdapter(adapter2);
 //        ArrayAdapter<String> adapter3= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Meal_Type));
 //        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        meal.setAdapter(adapter3);
@@ -74,10 +74,10 @@ ImageButton button;
 //        }
 //
 //    }
-    @OnClick(R.id.imageButton_block)
-    public void viewMenu()
+    @OnClick(R.id.imageButton_mess_type)
+    public void click()
     {
-        Intent i = new Intent(this, Select_mess_type.class);
+        Intent i = new Intent(this, Select_date.class);
 
         this.startActivity(i);
     }

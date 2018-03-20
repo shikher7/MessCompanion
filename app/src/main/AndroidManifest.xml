@@ -23,7 +23,10 @@
             android:name=".MenuActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Menu"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".Select_mess_type" />
+        <activity android:name=".Select_date" />
+        <activity android:name=".Select_choice"></activity>
     </application>
 
 </manifest>

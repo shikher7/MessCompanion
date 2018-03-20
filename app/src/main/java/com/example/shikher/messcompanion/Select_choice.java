@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import butterknife.BindView;
@@ -18,18 +21,20 @@ import butterknife.OnClick;
  * Created by shikher on 4/7/17.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class Select_choice extends AppCompatActivity {
 
-
-    @BindView(R.id.spinner_block)
-    Spinner block;
+@BindView(R.id.radio_NO)
+RadioButton No;
+@BindView(R.id.radio_YES)
+RadioButton Yes;
+    //    @BindView(R.id.spinner_block)
+////    Spinner block;
 //    @BindView(R.id.spinner_mess_type)
 //    Spinner mess;
-//    @BindView(R.id.spinner_meal)
+    //    @BindView(R.id.spinner_meal)
 //    Spinner meal;
-    @BindView(R.id.imageButton_block)
-ImageButton button;
-//    @BindView(R.id.button_submit_eat)
+
+//    @Bindbiew(R.id.button_submit_eat)
 //    Button submit;
 //    private int mYear, mMonth, mDay;
 //    private int mYear2, mMonth2, mDay2;
@@ -37,11 +42,12 @@ ImageButton button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_block);
+        setContentView(R.layout.activity_select_choice);
         ButterKnife.bind(this);
-        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Blocks));
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        block.setAdapter(adapter1);
+        No.setChecked(true);
+//        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Blocks));
+//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        block.setAdapter(adapter1);
 //        ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Mess_Type));
 //        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        mess.setAdapter(adapter2);
@@ -49,7 +55,7 @@ ImageButton button;
 //        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        meal.setAdapter(adapter3);
     }
-//    @OnClick(R.id.button_register)
+    //    @OnClick(R.id.button_register)
 //    public void onRegisterSubmit(View v) {
 //
 //        mYear2=mYear2-1900;
@@ -74,10 +80,34 @@ ImageButton button;
 //        }
 //
 //    }
-    @OnClick(R.id.imageButton_block)
-    public void viewMenu()
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_YES:
+                if (checked)
+                    No.setChecked(false);
+                    break;
+            case R.id.radio_NO:
+                if (checked)
+                    Yes.setChecked(false);
+                    break;
+        }
+    }
+    @OnClick(R.id.button_choice_menu)
+    public void click()
     {
-        Intent i = new Intent(this, Select_mess_type.class);
+        Intent i = new Intent(this, MenuActivity.class);
+
+        this.startActivity(i);
+    }
+    @OnClick(R.id.button_choice_submit)
+    public void submit()
+    {
+        Intent i = new Intent(this, MainActivity.class);
+        Toast.makeText(this, "Choice updated successfully.", Toast.LENGTH_SHORT).show();
 
         this.startActivity(i);
     }
