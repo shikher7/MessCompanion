@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Mess Companion</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="Mess_Blocks">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>P</item>
+    </string-array>
+    <string-array name="Mess_Type">
+        <item>South Indian Veg</item>
+        <item>South Indian Non-Veg</item>
+        <item>North Indian Veg</item>
+        <item>North Indian Non-Veg</item>
+        <item>Special Mess</item>
+    </string-array>
+    <string-array name="Meal_Type">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Snack</item>
+        <item>Dinner</item>
+    </string-array>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
